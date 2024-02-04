@@ -59,7 +59,7 @@ async def get_msg(userbot, client, bot, sender, edit_id, msg_link, i):
                 progress=progress_for_pyrogram,
                 progress_args=(
                     client,
-                    "**DOWNLOADING:**\n",
+                    "**Downloading:**\n",
                     edit,
                     time.time()
                 )
@@ -87,7 +87,7 @@ async def get_msg(userbot, client, bot, sender, edit_id, msg_link, i):
                     progress=progress_for_pyrogram,
                     progress_args=(
                         client,
-                        '**UPLOADING:**\n',
+                        '**Uploading:**\n',
                         edit,
                         time.time()
                     )
@@ -111,7 +111,7 @@ async def get_msg(userbot, client, bot, sender, edit_id, msg_link, i):
                     progress=progress_for_pyrogram,
                     progress_args=(
                         client,
-                        '**UPLOADING:**\n',
+                        '**Uploading:**\n',
                         edit,
                         time.time()
                     )
@@ -130,7 +130,7 @@ async def get_msg(userbot, client, bot, sender, edit_id, msg_link, i):
                     progress=progress_for_pyrogram,
                     progress_args=(
                         client,
-                        '**UPLOADING:**\n',
+                        '**Uploading:**\n',
                         edit,
                         time.time()
                     )
@@ -162,16 +162,16 @@ async def get_msg(userbot, client, bot, sender, edit_id, msg_link, i):
                 try: 
                     if msg.media==MessageMediaType.VIDEO and msg.video.mime_type in ["video/mp4", "video/x-matroska"]:
                         UT = time.time()
-                        uploader = await fast_upload(f'{file}', f'{file}', UT, bot, edit, '**UPLOADING:**')
+                        uploader = await fast_upload(f'{file}', f'{file}', UT, bot, edit, '**Uploading:**')
                         attributes = [DocumentAttributeVideo(duration=duration, w=width, h=height, round_message=round_message, supports_streaming=True)] 
                         await bot.send_file(sender, uploader, caption=caption, thumb=thumb_path, attributes=attributes, force_document=False)
                     elif msg.media==MessageMediaType.VIDEO_NOTE:
-                        uploader = await fast_upload(f'{file}', f'{file}', UT, bot, edit, '**UPLOADING:**')
+                        uploader = await fast_upload(f'{file}', f'{file}', UT, bot, edit, '**Uploading:**')
                         attributes = [DocumentAttributeVideo(duration=duration, w=width, h=height, round_message=round_message, supports_streaming=True)] 
                         await bot.send_file(sender, uploader, caption=caption, thumb=thumb_path, attributes=attributes, force_document=False)
                     else:
                         UT = time.time()
-                        uploader = await fast_upload(f'{file}', f'{file}', UT, bot, edit, '**UPLOADING:**')
+                        uploader = await fast_upload(f'{file}', f'{file}', UT, bot, edit, '**Uploading:**')
                         await bot.send_file(sender, uploader, caption=caption, thumb=thumb_path, force_document=True)
                     if os.path.isfile(file) == True:
                         os.remove(file)
